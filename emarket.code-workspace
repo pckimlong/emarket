@@ -1,0 +1,33 @@
+{
+  "folders": [
+    {
+      "name": "🛍️ Customer App",
+      "path": "apps/customer"
+    },
+    {
+      "name": "🛡️ Admin App",
+      "path": "apps/admin"
+    },
+    {
+      "name": "🧩 Features",
+      "path": "features"
+    },
+    {
+      "name": "🧱 Shared",
+      "path": "shared"
+    },
+    {
+      "name": "⚙️ Backend Server",
+      "path": "backend/emarket_server"
+    },
+    {
+      "name": "📚 Docs",
+      "path": "docs"
+    },
+    {
+      "name": "📦 Project Root",
+      "path": "."
+    }
+  ],
+  "settings": {}
+}

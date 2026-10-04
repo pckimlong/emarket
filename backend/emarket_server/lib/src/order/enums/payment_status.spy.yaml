@@ -1,0 +1,8 @@
+enum: PaymentStatus
+serialized: byName
+values:
+  - pending
+  - authorized
+  - paid
+  - failed
+  - refunded

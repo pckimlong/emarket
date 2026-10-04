@@ -1,0 +1,11 @@
+class: SystemSettingDto
+extends: BaseClass
+table: system_settings
+fields:
+  key: String
+  value: String
+
+indexes:
+  system_settings_key_unique_idx:
+    fields: key
+    unique: true

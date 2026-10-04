@@ -1,0 +1,43 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      VERSION: '4.0.0-rc.2'
+      SERVERPOD_PASSWORD_database: '4Fyv-qyoJln8zqln64odb93rcBO61w5W'
+      SERVERPOD_PASSWORD_redis: '7-gS7Ef18ndSJ1NTP03lYtIZDDtx1zMO'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.0'
+
+      - name: Start containers
+        working-directory: backend/emarket_server
+        run: docker compose up --quiet-pull --build -d
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Install Serverpod CLI
+        run: dart pub global activate serverpod_cli $VERSION
+
+      - name: Generate workspace source
+        run: dart run melos run codegen --no-select
+
+      - name: Run tests
+        run: dart run melos run test --no-select
+
+      - name: Stop containers
+        if: always()
+        working-directory: backend/emarket_server
+        run: docker compose down -v

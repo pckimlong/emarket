@@ -1,0 +1,10 @@
+enum: OrderStatus
+serialized: byName
+values:
+  - pending
+  - confirmed
+  - processing
+  - shipped
+  - delivered
+  - cancelled
+  - refunded

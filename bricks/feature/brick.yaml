@@ -1,0 +1,10 @@
+name: feature
+description: Generate an emarket feature from the Brand three-package baseline.
+version: 0.1.0+1
+environment:
+  mason: ^0.1.2
+vars:
+  name:
+    type: string
+    description: Feature name in lower_snake_case.
+    prompt: What is the feature name (lower_snake_case)?

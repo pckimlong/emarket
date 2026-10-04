@@ -1,0 +1,25 @@
+class: ProductDto
+extends: BaseClass
+table: products
+fields:
+  shopId: UuidValue, relation(parent=shops, onDelete=Cascade)
+  categoryId: UuidValue?, relation(parent=categories, onDelete=SetNull)
+  brandId: UuidValue?, relation(parent=brands, onDelete=SetNull)
+  name: String
+  description: String?
+  basePrice: double
+  costPrice: double?
+  sku: String?
+  barcode: String?
+  thumbnailPath: String?
+  imagePaths: List<String>
+  isActive: bool, default=true
+  isFeatured: bool, default=false
+  trackInventory: bool, default=true
+  attributes: Map<String, String>?
+  tags: List<String>?
+
+indexes:
+  product_shop_sku_unique_idx:
+    fields: shopId, sku
+    unique: true

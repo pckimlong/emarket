@@ -1,0 +1,35 @@
+name: {{feature_name}}_admin_presentation
+description: {{class_name}} feature admin presentation layer (widgets, state management, UI components).
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+resolution: workspace
+
+dependencies:
+  admin_ui_kit: ^0.0.1
+  presentation_utils: ^0.0.1
+  fast_immutable_collections: ^11.2.0
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.1.1
+  flutter_hooks: ^0.21.3+1
+  flutter_lucide: ^1.11.0
+  fpdart: ^1.2.0
+  freezed_annotation: ^3.1.0
+  material_ui: ^1.1.1
+  bloc_concurrency: ^0.3.0
+  {{feature_name}}_domain: ^0.0.1
+
+dev_dependencies:
+  bloc_test: ^10.0.0
+  build_runner: ^2.16.0
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+  freezed: ^4.0.0
+
+flutter:
+  uses-material-design: true

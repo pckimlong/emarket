@@ -1,0 +1,39 @@
+name: customer
+description: E-Market customer application.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.0
+
+resolution: workspace
+
+dependencies:
+  catalog_customer_presentation: ^0.0.1
+  catalog_data: ^0.0.1
+  catalog_domain: ^0.0.1
+  cupertino_icons: ^1.0.8
+  customer_ui_kit: ^0.0.1
+  domain_primitives: ^0.0.1
+  flutter:
+    sdk: flutter
+  flutter_lucide: ^1.11.0
+  fpdart: ^1.2.0
+  material_ui: ^1.1.1
+  staff_customer_presentation: ^0.0.1
+  staff_data: ^0.0.1
+  staff_domain: ^0.0.1
+  shop_customer_presentation: ^0.0.1
+  shop_data: ^0.0.1
+  shop_domain: ^0.0.1
+  customer_profile_presentation: ^0.0.1
+  customer_data: ^0.0.1
+  customer_domain: ^0.0.1
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

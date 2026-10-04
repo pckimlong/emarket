@@ -1,0 +1,6 @@
+class: CatalogDto
+extends: BaseClass
+table: catalogs
+fields:
+  name: String
+  archived: bool

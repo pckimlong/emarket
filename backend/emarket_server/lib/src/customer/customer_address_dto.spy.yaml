@@ -1,0 +1,12 @@
+class: CustomerAddressDto
+extends: BaseClass
+table: customer_addresses
+fields:
+  customerId: UuidValue, relation(parent=customers, onDelete=Cascade)
+  label: String
+  recipientName: String?
+  phoneNumber: String
+  addressLine: String
+  coordinates: Map<String, double>?
+  deliveryNotes: String?
+  isDefault: bool, default=false

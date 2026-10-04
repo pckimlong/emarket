@@ -1,0 +1,126 @@
+# Miscellaneous & OS
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# AI Agent Instructions
+AGENTS.md
+agents.md
+
+# IntelliJ / IDEs
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Flutter / Dart / Pub related
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+.mason/
+/mason-lock.json
+bricks/**/hooks/pubspec.lock
+pubspec_overrides.yaml
+build/
+coverage/
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.widget_preview/
+
+# Generated Dart source
+**/*.g.dart
+**/*.freezed.dart
+**/*.auto_mappr.dart
+**/*.gr.dart
+**/*.mocks.dart
+
+# Serverpod generated source
+backend/emarket_client/lib/src/protocol/
+backend/emarket_server/lib/src/generated/
+backend/emarket_server/test/integration/test_tools/serverpod_test_tools.dart
+
+# Symbolication & Obfuscation
+app.*.symbols
+app.*.map.json
+
+# Serverpod & Secrets
+.serverpod/
+**/.serverpod/
+**/config/passwords.yaml
+**/config/firebase_service_account_key.json
+backend/emarket_server/web/app
+
+# Android
+gradle-wrapper.jar
+**/android/app/debug
+**/android/app/profile
+**/android/app/release
+**/.gradle/
+**/android/captures/
+**/android/gradlew
+**/android/gradlew.bat
+**/android/local.properties
+**/GeneratedPluginRegistrant.java
+**/.cxx/
+**/key.properties
+**/*.keystore
+**/*.jks
+
+# iOS & macOS (Xcode & Flutter)
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/flutter_export_environment.sh
+**/Flutter/App.framework
+**/Flutter/Flutter.framework
+**/Flutter/Flutter.podspec
+**/Flutter/Generated.xcconfig
+**/Flutter/ephemeral/
+**/Flutter/app.flx
+**/Flutter/app.zip
+**/Flutter/flutter_assets/
+**/Flutter/flutter_export_environment.sh
+**/ServiceDefinitions.json
+**/Runner/GeneratedPluginRegistrant.*
+**/DerivedData/
+**/Pods/
+**/.symlinks/
+**/xcuserdata/
+**/.generated/
+**/dgph
+*.mode1v3
+*.mode2v3
+*.moved-aside
+*.pbxuser
+*.perspectivev3
+!default.mode1v3
+!default.mode2v3
+!default.pbxuser
+!default.perspectivev3
+
+# Linux
+**/linux/flutter/ephemeral/
+
+# Windows
+**/windows/flutter/ephemeral/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+x64/
+x86/
+*.[Cc]ache
+!*.[Cc]ache/

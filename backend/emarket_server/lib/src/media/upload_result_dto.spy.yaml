@@ -1,0 +1,7 @@
+class: UploadResultDto
+fields:
+  path: String
+  url: String
+  fileName: String
+  mimeType: String
+  fileSizeBytes: int

@@ -1,0 +1,3 @@
+exception: BusinessException
+fields:
+  message: String

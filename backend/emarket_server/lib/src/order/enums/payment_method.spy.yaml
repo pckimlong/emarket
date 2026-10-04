@@ -1,0 +1,6 @@
+enum: PaymentMethod
+serialized: byName
+values:
+  - cod
+  - card
+  - bankTransfer

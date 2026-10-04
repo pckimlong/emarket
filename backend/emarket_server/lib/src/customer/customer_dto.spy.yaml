@@ -1,0 +1,24 @@
+class: CustomerDto
+extends: BaseClass
+table: customers
+fields:
+  authUserId: UuidValue
+  phoneNumber: String?
+  email: String?
+  firstName: String?
+  lastName: String?
+  profileImagePath: String?
+  language: String, default='en'
+  status: String, default='active'
+  notificationSettings: Map<String, String>?
+
+indexes:
+  customer_auth_user_id_unique_idx:
+    fields: authUserId
+    unique: true
+  customer_phone_unique_idx:
+    fields: phoneNumber
+    unique: true
+  customer_email_unique_idx:
+    fields: email
+    unique: true

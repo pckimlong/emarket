@@ -1,0 +1,20 @@
+name: media_data
+description: Media feature data layer (repo implementations, mappers).
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+resolution: workspace
+
+dependencies:
+  data_utils: ^0.0.1
+  domain_primitives: ^0.0.1
+  emarket_client: ^0.0.1
+  fpdart: ^1.2.0
+  media_domain: ^0.0.1
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.0

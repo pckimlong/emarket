@@ -1,0 +1,17 @@
+class: PromotionDto
+extends: BaseClass
+table: promotions
+fields:
+  shopId: UuidValue, relation(parent=shops, onDelete=Cascade)
+  name: String
+  description: String?
+  type: String
+  value: double?
+  buyQuantity: int?
+  getQuantity: int?
+  conditions: Map<String, String>?
+  usageLimit: int?
+  usageCount: int, default=0
+  startsAt: DateTime
+  endsAt: DateTime?
+  isActive: bool, default=true

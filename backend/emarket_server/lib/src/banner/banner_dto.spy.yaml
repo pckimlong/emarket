@@ -1,0 +1,14 @@
+class: BannerDto
+extends: BaseClass
+table: banners
+fields:
+  shopId: UuidValue?, relation(parent=shops, onDelete=Cascade)
+  title: String?
+  subtitle: String?
+  imagePath: String
+  actionType: String
+  actionPayload: Map<String, String>?
+  displayOrder: int, default=0
+  startsAt: DateTime
+  endsAt: DateTime?
+  isActive: bool, default=true

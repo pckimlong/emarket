@@ -1,0 +1,34 @@
+name: admin_ui_kit
+description: Shared UI kit and design system components for admin applications.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+resolution: workspace
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_lucide: ^1.11.0
+  forui: ^0.26.0
+  material_ui: ^1.1.1
+  fast_immutable_collections: ^11.2.0
+  presentation_utils: ^0.0.1
+
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+  forui_cli: ^0.26.0
+
+flutter:
+  fonts:
+    - family: Geist
+      fonts:
+        - asset: assets/fonts/Geist/Geist.ttf
+        - asset: assets/fonts/Geist/Geist-Italic.ttf
+          style: italic
+  uses-material-design: true

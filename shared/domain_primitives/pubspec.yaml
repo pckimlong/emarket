@@ -1,0 +1,16 @@
+name: domain_primitives
+description: Domain primitives layer (value objects, type-safe identifiers).
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+resolution: workspace
+
+dependencies:
+  fpdart: ^1.2.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.0

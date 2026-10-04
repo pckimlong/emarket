@@ -1,0 +1,75 @@
+name: admin
+description: E-Market administration application.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.0
+
+resolution: workspace
+
+dependencies:
+  admin_ui_kit: ^0.0.1
+  app_bootstrap: ^0.0.1
+  app_logger: ^0.0.1
+  auth_data: ^0.0.1
+  auth_domain: ^0.0.1
+  auth_presentation: ^0.0.1
+  auto_route: ^11.1.0
+  catalog_admin_presentation: ^0.0.1
+  catalog_data: ^0.0.1
+  catalog_domain: ^0.0.1
+  cupertino_icons: ^1.0.8
+  data_utils: ^0.0.1
+  domain_primitives: ^0.0.1
+  emarket_client: ^0.0.1
+  firebase_core: ^4.14.0
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_bloc: ^9.1.1
+  flutter_lucide: ^1.11.0
+  bloc_concurrency: ^0.3.0
+  forui: ^0.26.0
+  fpdart: ^1.2.0
+  freezed_annotation: ^3.1.0
+  material_ui: ^1.1.1
+  serverpod_auth_core_client: 4.0.0-rc.2
+  shared_preferences: ^2.5.5
+  talker: ^5.1.20
+  talker_bloc_logger: ^5.1.20
+  talker_flutter: ^5.1.20
+  staff_admin_presentation: ^0.0.1
+  staff_data: ^0.0.1
+  staff_domain: ^0.0.1
+  shop_admin_presentation: ^0.0.1
+  shop_data: ^0.0.1
+  shop_domain: ^0.0.1
+  customer_admin_presentation: ^0.0.1
+  customer_data: ^0.0.1
+  customer_domain: ^0.0.1
+  media_admin_presentation: ^0.0.1
+  media_data: ^0.0.1
+  media_domain: ^0.0.1
+  presentation_utils: ^0.0.1
+
+dev_dependencies:
+  auto_route_generator: ^10.6.0
+  bloc_test: ^10.0.0
+  build_runner: ^2.16.0
+  fast_immutable_collections: ^11.2.0
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+  forui_cli: ^0.26.0
+  freezed: ^4.0.0
+
+flutter:
+  fonts:
+    - family: Geist
+      fonts:
+        - asset: assets/fonts/Geist/Geist.ttf
+        - asset: assets/fonts/Geist/Geist-Italic.ttf
+          style: italic
+  uses-material-design: true

@@ -1,0 +1,92 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "emarket_server",
+            "cwd": "${workspaceFolder}/backend/emarket_server",
+            "request": "launch",
+            "type": "dart",
+            "program": "${workspaceFolder}/backend/emarket_server/bin/main.dart",
+            "env": {
+                "SERVERPOD_PASSWORD_database": "Pd0A-VcD3CwBoHuuSN_qoWw27G9-wzxW",
+                "DEFAULT_ADMIN_EMAIL": "admin@emarket.local",
+                "DEFAULT_ADMIN_PASSWORD": "123456",
+                "DEFAULT_SHOP_NAME": "Default Store"
+            },
+            "args": [
+                "--apply-migrations"
+            ]
+        },
+        {
+            "name": "emarket_server (Attach)",
+            "cwd": "${workspaceFolder}/backend/emarket_server",
+            "request": "attach",
+            "type": "dart",
+            "vmServiceInfoFile": "${workspaceFolder}/backend/emarket_server/.dart_tool/serverpod/vm-service-info.json"
+        },
+        {
+            "name": "emarket_server (Docker)",
+            "cwd": "${workspaceFolder}/backend/emarket_server",
+            "request": "launch",
+            "type": "dart",
+            "preLaunchTask": "docker_compose_up",
+            "program": "${workspaceFolder}/backend/emarket_server/bin/main.dart",
+            "env": {
+                "SERVERPOD_DATABASE_DATA_PATH": "",
+                "SERVERPOD_PASSWORD_database": "Pd0A-VcD3CwBoHuuSN_qoWw27G9-wzxW",
+                "DEFAULT_ADMIN_EMAIL": "admin@emarket.local",
+                "DEFAULT_ADMIN_PASSWORD": "123456",
+                "DEFAULT_SHOP_NAME": "Default Store"
+            },
+            "args": [
+                "--apply-migrations"
+            ]
+        },
+        {
+            "name": "admin",
+            "cwd": "${workspaceFolder}/apps/admin",
+            "request": "launch",
+            "type": "dart",
+            "program": "${workspaceFolder}/apps/admin/lib/main_dev.dart"
+        },
+        {
+            "name": "customer",
+            "cwd": "${workspaceFolder}/apps/customer",
+            "request": "launch",
+            "type": "dart",
+            "program": "${workspaceFolder}/apps/customer/lib/main.dart"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "emarket admin (full stack)",
+            "configurations": [
+                "emarket_server",
+                "admin"
+            ],
+            "presentation": {
+                "order": 1
+            }
+        },
+        {
+            "name": "emarket admin (attach server)",
+            "configurations": [
+                "emarket_server (Attach)",
+                "admin"
+            ],
+            "presentation": {
+                "order": 2
+            }
+        },
+        {
+            "name": "emarket customer (full stack)",
+            "configurations": [
+                "emarket_server",
+                "customer"
+            ],
+            "presentation": {
+                "order": 3
+            }
+        }
+    ]
+}

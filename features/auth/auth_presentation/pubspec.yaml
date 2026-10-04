@@ -1,0 +1,28 @@
+name: "auth_presentation"
+description: A auth_presentation package.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+resolution: workspace
+
+dependencies:
+  admin_ui_kit: ^0.0.1
+  auth_domain: ^0.0.1
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.1.1
+  flutter_login: ^7.0.0
+  fpdart: ^1.2.0
+  material_ui: ^1.1.1
+
+dev_dependencies:
+  bloc_test: ^10.0.0
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

@@ -1,0 +1,20 @@
+class: StaffDto
+extends: BaseClass
+table: staffs
+fields:
+  authUserId: UuidValue
+  email: String
+  phoneNumber: String?
+  firstName: String
+  lastName: String?
+  isAdmin: bool, default=false
+  isActive: bool, default=true
+  lastLogin: DateTime?
+
+indexes:
+  staff_auth_user_id_unique_idx:
+    fields: authUserId
+    unique: true
+  staff_email_unique_idx:
+    fields: email
+    unique: true

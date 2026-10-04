@@ -1,0 +1,10 @@
+name: package
+description: Generate a single Dart package pre-configured with Freezed, fast_immutable_collections, and build_runner.
+version: 0.1.0+1
+environment:
+  mason: ^0.1.2
+vars:
+  name:
+    type: string
+    description: Package name in lower_snake_case (e.g. auth_utils).
+    prompt: What is the package name (lower_snake_case)?

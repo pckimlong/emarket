@@ -1,0 +1,26 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - "bricks/**"
+    - "**/__brick__/**"
+    - "**/build/**"
+    - "**/android/**"
+    - "**/ios/**"
+    - "**/web/**"
+    - "**/windows/**"
+    - "**/macos/**"
+    - "**/linux/**"
+    - "**/lib/src/protocol/**"
+    - "**/lib/src/generated/**"
+    - "**/test/integration/test_tools/**"
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
+
+formatter:
+  trailing_commas: preserve

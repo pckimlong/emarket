@@ -1,0 +1,32 @@
+name: shop_customer_presentation
+description: Shop feature customer presentation layer (widgets, state management, UI components).
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+resolution: workspace
+
+dependencies:
+  customer_ui_kit: ^0.0.1
+  fast_immutable_collections: ^11.2.0
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.1.1
+  flutter_hooks: ^0.21.3+1
+  fpdart: ^1.2.0
+  freezed_annotation: ^3.1.0
+  material_ui: ^1.1.1
+  shop_domain: ^0.0.1
+
+dev_dependencies:
+  bloc_test: ^10.0.0
+  build_runner: ^2.16.0
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+  freezed: ^4.0.0
+
+flutter:
+  uses-material-design: true

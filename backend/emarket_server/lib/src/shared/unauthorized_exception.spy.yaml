@@ -1,0 +1,3 @@
+exception: UnauthorizedException
+fields:
+  message: String

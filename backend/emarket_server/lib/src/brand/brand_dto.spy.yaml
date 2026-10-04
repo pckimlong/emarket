@@ -1,0 +1,13 @@
+# Brand will use wisely across shop, only admin can manage brands
+class: BrandDto
+extends: BaseClass
+table: brands
+fields:
+  name: String
+  logoPath: String
+  isActive: bool, default=true
+
+indexes:
+  brand_name_unique_idx:
+    fields: name
+    unique: true

@@ -1,0 +1,12 @@
+class: WishlistItemDto
+table: wishlist_items
+fields:
+  id: UuidValue?, defaultPersist=random_v7
+  customerId: UuidValue, relation(parent=customers, onDelete=Cascade)
+  productId: UuidValue, relation(parent=products, onDelete=Cascade)
+  createdAt: DateTime, default=now
+
+indexes:
+  wishlist_customer_product_unique_idx:
+    fields: customerId, productId
+    unique: true

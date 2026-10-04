@@ -1,0 +1,16 @@
+class: CategoryDto
+extends: BaseClass
+table: categories
+fields:
+  shopId: UuidValue, relation(parent=shops, onDelete=Cascade)
+  parentId: UuidValue?, relation(parent=categories, onDelete=SetNull)
+  name: String
+  description: String?
+  imagePath: String?
+  displayOrder: int, default=0
+  isActive: bool, default=true
+
+indexes:
+  category_shop_parent_name_unique_idx:
+    fields: shopId, parentId, name
+    unique: true

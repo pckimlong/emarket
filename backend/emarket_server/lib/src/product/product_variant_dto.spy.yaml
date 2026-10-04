@@ -1,0 +1,18 @@
+class: ProductVariantDto
+extends: BaseClass
+table: product_variants
+fields:
+  productId: UuidValue, relation(parent=products, onDelete=Cascade)
+  name: String
+  sku: String?
+  priceAdjustment: double, default=0.0
+  imagePath: String?
+  attributes: Map<String, String>?
+  currentStock: int, default=0
+  lowStockThreshold: int, default=10
+  isActive: bool, default=true
+
+indexes:
+  product_variant_sku_unique_idx:
+    fields: sku
+    unique: true

@@ -1,0 +1,3 @@
+exception: ForbiddenException
+fields:
+  message: String

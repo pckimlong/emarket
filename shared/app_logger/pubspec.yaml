@@ -1,0 +1,17 @@
+name: app_logger
+description: Reusable, pure-Dart application logging abstraction and implementations.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+resolution: workspace
+
+dependencies:
+  meta: ^1.16.0
+  talker: ^5.1.20
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.0

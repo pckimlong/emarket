@@ -1,0 +1,11 @@
+class: CartDto
+extends: BaseClass
+table: carts
+fields:
+  customerId: UuidValue, relation(parent=customers, onDelete=Cascade)
+  shopId: UuidValue?, relation(parent=shops, onDelete=SetNull)
+
+indexes:
+  cart_customer_unique_idx:
+    fields: customerId
+    unique: true

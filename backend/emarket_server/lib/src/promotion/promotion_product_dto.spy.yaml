@@ -1,0 +1,12 @@
+class: PromotionProductDto
+table: promotion_products
+fields:
+  id: UuidValue?, defaultPersist=random_v7
+  promotionId: UuidValue, relation(parent=promotions, onDelete=Cascade)
+  productId: UuidValue, relation(parent=products, onDelete=Cascade)
+  createdAt: DateTime, default=now
+
+indexes:
+  promotion_product_unique_idx:
+    fields: promotionId, productId
+    unique: true

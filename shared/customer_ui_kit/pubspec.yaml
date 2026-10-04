@@ -1,0 +1,23 @@
+name: customer_ui_kit
+description: Shared UI kit and design system components for customer applications.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+resolution: workspace
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_lucide: ^1.11.0
+  material_ui: ^1.1.1
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

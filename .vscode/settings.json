@@ -1,0 +1,44 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/flutter/ephemeral": true,
+        "**/Flutter/ephemeral": true,
+        "**/.symlinks": true,
+        "**/.plugin_symlinks": true,
+        "**/.dart_tool": true,
+        "**/.pub": true,
+        "**/.pub-cache": true,
+        "**/.idea": true,
+        "**/*.iml": true,
+        "**/*.ipr": true,
+        "**/*.iws": true,
+        ".mason": true,
+        "**/build": true
+    },
+    "dart.analysisExcludedFolders": [
+        "bricks/feature/__brick__",
+        "bricks/package/__brick__"
+    ],
+    "files.associations": {
+        "**/bricks/**/__brick__/**/*.dart": "handlebars",
+        "**/bricks/**/__brick__/**/*.yaml": "handlebars"
+    },
+    "cSpell.words": [
+        "Mappr",
+        "serverpod"
+    ],
+    "explorer.fileNesting.patterns": {
+        "pubspec.yaml": "pubspec.lock,.packages,.flutter-plugins,.flutter-plugins-dependencies,.metadata",
+        "*.dart": "${capture}.g.dart,${capture}.freezed.dart, ${capture}.mocks.dart,${capture}.gr.dart, ${capture}.table.dart, ${capture}.widget.dart,${capture}.schema.dart,${capture}.supabase.dart,${capture}.auto_mappr.dart,${capture}.config.dart",
+        "mason.yaml": "mason-lock.json"
+    },
+    "[dart]": {
+        "editor.rulers": [
+            100
+        ]
+    }
+}

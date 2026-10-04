@@ -1,0 +1,14 @@
+class: CartItemDto
+table: cart_items
+fields:
+  id: UuidValue?, defaultPersist=random_v7
+  cartId: UuidValue, relation(parent=carts, onDelete=Cascade)
+  productId: UuidValue, relation(parent=products, onDelete=Cascade)
+  variantId: UuidValue?, relation(parent=product_variants, onDelete=Cascade)
+  quantity: int, default=1
+  createdAt: DateTime, default=now
+
+indexes:
+  cart_item_unique_idx:
+    fields: cartId, productId, variantId
+    unique: true

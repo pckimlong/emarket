@@ -1,0 +1,6 @@
+class: ShopContextDto
+fields:
+  shopId: UuidValue
+  shopName: String
+  role: String
+  permissions: List<String>

@@ -1,0 +1,11 @@
+{
+  "Identity Class" : {
+		"prefix": "typed-id-class",
+		"body": [
+			"extension type const $1Id(${2|String,int|} value) {",
+			"\tfactory $1Id.fromJson(dynamic value) => $1Id(value);",
+			"\t${2|String,int|} toJson() => value;",
+			"}"
+		],
+	},
+}

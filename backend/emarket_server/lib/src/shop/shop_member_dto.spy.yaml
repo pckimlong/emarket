@@ -1,0 +1,14 @@
+class: ShopMemberDto
+extends: BaseClass
+table: shop_members
+fields:
+  staffId: UuidValue, relation(parent=staffs, onDelete=Cascade)
+  shopId: UuidValue, relation(parent=shops, onDelete=Cascade)
+  role: String
+  permissions: List<String>
+  isActive: bool, default=true
+
+indexes:
+  shop_members_staff_shop_unique_idx:
+    fields: staffId, shopId
+    unique: true

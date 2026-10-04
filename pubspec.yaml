@@ -1,0 +1,188 @@
+name: emarket_workspace
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+workspace:
+  # Apps
+  - apps/admin
+  - apps/customer
+
+  # Backend
+  - backend/emarket_client
+  - backend/emarket_server
+
+  # Features
+  - features/**
+
+  # Shared
+  - shared/**
+
+  # Bricks
+  - bricks/feature/hooks
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  melos: ^8.5.0
+
+dependency_overrides:
+  analyzer: ^13.3.0
+
+melos:
+  scripts:
+    server:stack:
+      description: Start Serverpod v4 full development stack (TUI, embedded database, hot reload, and companion apps).
+      env:
+        DEFAULT_ADMIN_EMAIL: admin@emarket.local
+        DEFAULT_ADMIN_PASSWORD: "123456"
+        DEFAULT_SHOP_NAME: "Default Store"
+      exec:
+        command: serverpod start
+        failFast: true
+      packageFilters:
+        scope: emarket_server
+
+    server:db:start:
+      description: Start the Serverpod v4 embedded PostgreSQL database standalone over TCP.
+      exec:
+        command: serverpod database start
+        failFast: true
+      packageFilters:
+        scope: emarket_server
+
+    server:start:
+      description: Start the Serverpod server with default admin credentials.
+      env:
+        DEFAULT_ADMIN_EMAIL: admin@emarket.local
+        DEFAULT_ADMIN_PASSWORD: "123456"
+        DEFAULT_SHOP_NAME: "Default Store"
+      exec:
+        command: dart run bin/main.dart --apply-migrations
+        failFast: true
+      packageFilters:
+        scope: emarket_server
+
+    server:dev:
+      description: Ensure docker containers are up and start Serverpod with default admin.
+      env:
+        DEFAULT_ADMIN_EMAIL: admin@emarket.local
+        DEFAULT_ADMIN_PASSWORD: "123456"
+        DEFAULT_SHOP_NAME: "Default Store"
+      exec:
+        command: docker compose up -d && dart run bin/main.dart --apply-migrations
+        failFast: true
+      packageFilters:
+        scope: emarket_server
+
+    server:migrate:
+      description: Apply pending database migrations and exit cleanly.
+      exec:
+        command: dart run bin/main.dart --apply-migrations --role maintenance
+        failFast: true
+      packageFilters:
+        scope: emarket_server
+
+    server:docker:up:
+      description: Start Serverpod PostgreSQL and Redis containers.
+      run: docker compose -f backend/emarket_server/docker-compose.yaml up -d
+
+    server:docker:down:
+      description: Stop Serverpod PostgreSQL and Redis containers.
+      run: docker compose -f backend/emarket_server/docker-compose.yaml down
+
+    server:docker:reset:
+      description: Wipe database volumes and start clean containers.
+      run: docker compose -f backend/emarket_server/docker-compose.yaml down -v && docker compose -f backend/emarket_server/docker-compose.yaml up -d
+
+    server:reset:
+      description: Wipe database volumes, start clean containers, and apply migrations cleanly.
+      exec:
+        command: docker compose down -v && docker compose up -d && dart run bin/main.dart --apply-migrations --role maintenance
+        failFast: true
+      packageFilters:
+        scope: emarket_server
+
+    server:reset:dev:
+      description: Wipe database volumes, start clean containers, apply migrations, and start server with default admin & shop.
+      env:
+        DEFAULT_ADMIN_EMAIL: admin@emarket.local
+        DEFAULT_ADMIN_PASSWORD: "123456"
+        DEFAULT_SHOP_NAME: "Default Store"
+      exec:
+        command: docker compose down -v && docker compose up -d && dart run bin/main.dart --apply-migrations
+        failFast: true
+      packageFilters:
+        scope: emarket_server
+
+    codegen:
+      description: Generate Serverpod and build_runner source across the workspace.
+      steps:
+        - dart run melos run codegen:serverpod --no-select
+        - dart run melos run codegen:build-runner --no-select
+
+    codegen:serverpod:
+      description: Generate the Serverpod server and client source.
+      exec:
+        command: serverpod generate
+        failFast: true
+      packageFilters:
+        scope: emarket_server
+
+    codegen:build-runner:
+      description: Run build_runner in every package that declares it.
+      exec:
+        command: dart run build_runner build
+        failFast: true
+        orderDependents: true
+      packageFilters:
+        dependsOn: build_runner
+
+    analyze:
+      description: Analyze the complete workspace.
+      steps:
+        - dart run melos run analyze:flutter --no-select
+        - dart run melos run analyze:dart --no-select
+
+    analyze:flutter:
+      description: Analyze every Flutter package.
+      exec:
+        command: flutter analyze --fatal-infos
+        concurrency: 1
+        failFast: true
+      packageFilters:
+        flutter: true
+
+    analyze:dart:
+      description: Analyze every Dart package.
+      exec:
+        command: dart analyze --fatal-infos
+        failFast: true
+      packageFilters:
+        flutter: false
+
+    test:
+      description: Run every Flutter and Dart package test suite.
+      steps:
+        - dart run melos run test:flutter --no-select
+        - dart run melos run test:dart --no-select
+
+    test:flutter:
+      description: Run tests in Flutter packages that have a test directory.
+      exec:
+        command: flutter test
+        concurrency: 1
+        failFast: true
+      packageFilters:
+        flutter: true
+        dirExists: test
+
+    test:dart:
+      description: Run tests in Dart packages that have a test directory.
+      exec:
+        command: dart test
+        failFast: true
+      packageFilters:
+        flutter: false
+        dirExists: test
+

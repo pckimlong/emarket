@@ -1,0 +1,24 @@
+class: OrderDto
+extends: BaseClass
+table: orders
+fields:
+  shopId: UuidValue, relation(parent=shops, onDelete=Cascade)
+  customerId: UuidValue?, relation(parent=customers, onDelete=SetNull)
+  orderNumber: String
+  status: OrderStatus, default=pending
+  paymentMethod: PaymentMethod, default=cod
+  paymentStatus: PaymentStatus, default=pending
+  subtotal: double
+  discountTotal: double, default=0.0
+  deliveryFee: double, default=0.0
+  taxAmount: double, default=0.0
+  totalAmount: double
+  currency: String, default='USD'
+  deliveryPhone: String
+  deliveryAddress: Map<String, String>?
+  customerNotes: String?
+
+indexes:
+  order_number_unique_idx:
+    fields: orderNumber
+    unique: true

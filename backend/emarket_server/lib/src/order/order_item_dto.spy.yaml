@@ -1,0 +1,16 @@
+class: OrderItemDto
+table: order_items
+fields:
+  id: UuidValue?, defaultPersist=random_v7
+  orderId: UuidValue, relation(parent=orders, onDelete=Cascade)
+  productId: UuidValue?, relation(parent=products, onDelete=SetNull)
+  variantId: UuidValue?, relation(parent=product_variants, onDelete=SetNull)
+  productName: String
+  variantName: String?
+  variantAttributes: Map<String, String>?
+  sku: String?
+  quantity: int
+  unitPrice: double
+  discountAmount: double, default=0.0
+  totalPrice: double
+  createdAt: DateTime, default=now

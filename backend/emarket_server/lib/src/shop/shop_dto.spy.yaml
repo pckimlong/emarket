@@ -1,0 +1,14 @@
+class: ShopDto
+extends: BaseClass
+table: shops
+fields:
+  name: String
+  description: String?
+  logoPath: String?
+  isActive: bool, default=true
+  settings: Map<String, String>?
+
+indexes:
+  shops_name_unique_idx:
+    fields: name
+    unique: true
